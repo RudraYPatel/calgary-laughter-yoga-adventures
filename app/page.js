@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Link href="./admin-authentication">Admin Login</Link>
+      <Link href="#">Admin Login</Link>
     </main>
   );
 }
