@@ -11,7 +11,7 @@ export default function AdminLogin() {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
-      router.push('./adminconsole'); // Navigate to the admin console after successful sign-in
+      router.push('/adminconsole'); 
     } catch (error) {
       console.error("Error signing in with Google", error);
     }

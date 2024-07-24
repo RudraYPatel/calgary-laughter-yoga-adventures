@@ -10,15 +10,15 @@ export default function Footer() {
             <div className="ml-24 text-black">
               <div className="font-bold mb-2">Explore</div>
               <ul>
-                <li><a href="#" className="hover:underline">Our Club</a></li>
-                <li><a href="#" className="hover:underline">Donations</a></li>
+                <li><a href="" className="hover:underline">Our Club</a></li>
+                <li><a href="" className="hover:underline">Donations</a></li>
               </ul>
             </div>
             <div className="ml-44 text-black">
               <div className="font-bold mb-2">Service</div>
               <ul>
-                <li><a href="#" className="hover:underline">FAQs</a></li>
-                <li><a href="#" className="hover:underline">Contact us</a></li>
+                <li><a href="" className="hover:underline">FAQs</a></li>
+                <li><a href="" className="hover:underline">Contact us</a></li>
               </ul>
             </div>
           </div>
