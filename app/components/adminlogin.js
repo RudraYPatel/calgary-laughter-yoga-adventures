@@ -1,24 +1,26 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useUserAuth } from "../auth-context";
-
+import { auth, signInWithEmailAndPassword } from "../firebase";
 
 export default function AdminLogin() {
   const { googleSignIn } = useUserAuth();
   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleLogin = async(e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setError("")
-    signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    router.push('/adminconsole'); 
-  })
-  .catch((error) => {
-    setError(error.message);
-  });
-  }
+    setError("");
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      router.push('/adminconsole'); 
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   const handleGoogleSignIn = async () => {
     try {
@@ -45,7 +47,8 @@ export default function AdminLogin() {
             <img src="/logo (2).png" alt="Logo" className="mx-auto h-20 w-auto" />
             <h2 className="mt-6 text-3xl font-extrabold text-black">Log in</h2>
           </div>
-          <form className="mt-8 space-y-6">
+          {error && <p className="text-red-500 text-center">{error}</p>}
+          <form className="mt-8 space-y-6" onSubmit={handleLogin}>
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
                 <label htmlFor="email" className="sr-only">Email address</label>
@@ -55,6 +58,8 @@ export default function AdminLogin() {
                   type="email"
                   autoComplete="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
                 />
@@ -67,6 +72,8 @@ export default function AdminLogin() {
                   type="password"
                   autoComplete="current-password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
                 />
@@ -80,7 +87,7 @@ export default function AdminLogin() {
                 Log In
               </button>
             </div>
-            <div>
+            {/* <div>
               <button
                 type="button"
                 onClick={handleGoogleSignIn}
@@ -89,9 +96,9 @@ export default function AdminLogin() {
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   <img src="/google.webp" alt="Google" className="h-5 w-5" />
                 </span>
-                Sign Up With Google
+                Sign In With Google
               </button>
-            </div>
+            </div> */}
           </form>
           <div className="mt-8 text-center text-sm text-gray-600">
             <div>© 2023 by YYC Laughter Yoga And Adventures.</div>
