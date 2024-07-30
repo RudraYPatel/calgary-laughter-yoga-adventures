@@ -8,6 +8,18 @@ export default function AdminLogin() {
   const { googleSignIn } = useUserAuth();
   const router = useRouter();
 
+  const handleLogin = async(e) => {
+    e.preventDefault();
+    setError("")
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    router.push('/adminconsole'); 
+  })
+  .catch((error) => {
+    setError(error.message);
+  });
+  }
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();

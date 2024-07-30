@@ -1,4 +1,6 @@
 import React from 'react'
+import AdminLogin from './adminlogin';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -19,6 +21,7 @@ export default function Footer() {
               <ul>
                 <li><a href="" className="hover:underline">FAQs</a></li>
                 <li><a href="" className="hover:underline">Contact us</a></li>
+                <Link href="#">Admin</Link>
               </ul>
             </div>
           </div>
