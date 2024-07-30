@@ -17,17 +17,18 @@ export default function AdminConsole() {
       {user ? (
         <div>
           <Header />
+          <div className="border-t-2 border-black"></div>
           <main className="flex-grow flex items-center justify-center relative p-6">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: "url('/bgimage.webp')" }}
             ></div>
             <div className="absolute inset-0 bg-white opacity-50"></div>
-            <div className="relative z-10 bg-white bg-opacity-75 p-10 rounded-xl shadow-md text-center max-w-lg mx-auto">
+            <div className="relative z-10  p-10 rounded-xl shadow-md text-center max-w-lg mx-auto">
               <img
                 src="/avatar.png"
                 alt="User Avatar"
-                className="h-24 w-24 mx-auto rounded-full mb-8"
+                className="h-24 w-24 mx-auto  rounded-full mb-8"
               />
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <button className="bg-black text-white py-3 px-6 rounded-md hover:bg-gray-800">
@@ -51,6 +52,7 @@ export default function AdminConsole() {
               </button>
             </div>
           </main>
+          <div className="border-t-2 border-black"></div>
           <Footer />
         </div>
       ) : (
