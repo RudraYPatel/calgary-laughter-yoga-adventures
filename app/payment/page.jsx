@@ -19,31 +19,34 @@ export default function Payment() {
           <h2 className="text-2xl font-bold mb-4">Billing Information</h2>
           <form>
             <div className="mb-4">
-              <label className="block text-gray-700">First Name</label>
+              <label className="block text-gray-800">First Name</label>
               <input
                 type="text"
+                required
                 className="w-full px-3 py-2 border rounded"
                 placeholder="First Name"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700">Last Name</label>
+              <label className="block text-gray-800">Last Name</label>
               <input
                 type="text"
+                required
                 className="w-full px-3 py-2 border rounded"
                 placeholder="Last Name"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700">Email Address</label>
+              <label className="block text-gray-800">Email Address</label>
               <input
                 type="email"
+                required
                 className="w-full px-3 py-2 border rounded"
                 placeholder="Email Address"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700">Contact Number (optional)</label>
+              <label className="block text-gray-800">Contact Number (optional)</label>
               <div className="flex">
                 <select
                   className="border rounded-l px-3 py-2"
