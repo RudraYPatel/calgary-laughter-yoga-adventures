@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Link from 'next/link';
 
 export default function Upcoming() {
   const [regularTicketCount, setRegularTicketCount] = useState(0);
@@ -40,8 +41,22 @@ export default function Upcoming() {
     }
   };
 
+  const handleCheckoutClick = (event) => {
+    if (regularTicketCount === 0) {
+      event.preventDefault();
+      alert('You have to add at least one ticket');
+    }
+  };
+
+  const regularTicketPrice = 475.00;
+  const gst = 23.75;
+  const serviceFee = 12.47;
+
+  const totalRegularTicketPrice = regularTicketCount * (regularTicketPrice + gst + serviceFee);
+  const totalAmount = totalRegularTicketPrice + sponsorshipAmount;
+
   return (
-    <main className='min-h-screen bg-white'>
+    <main className="min-h-screen bg-white">
       <Header />
       <div className='mt-5'>
         <p className='text-xl text-left m-10 font-semibold mb-4'>Play, grow and shine in the Canadian Rockies!</p>
@@ -73,17 +88,17 @@ export default function Upcoming() {
               <p>+$12.47 service fee</p>
               <div className="flex items-center mt-4">
                 <button
-                  className="bg-gray-500 text-white border-none py-2 px-4 rounded-xl  mr-4"
-                  onClick={handleRegularIncrement}
-                >
-                  +
-                </button>
-                <span className="text-xl">{regularTicketCount}</span>
-                <button
-                  className="bg-gray-500 text-white border-none py-2 px-4 rounded-xl   ml-4"
+                  className="bg-black text-white border-none py-2 px-4 rounded-xl  mr-4"
                   onClick={handleRegularDecrement}
                 >
                   -
+                </button>
+                <span className="text-xl">{regularTicketCount}</span>
+                <button
+                  className="bg-black text-white border-none py-2 px-4 rounded-xl   ml-4"
+                  onClick={handleRegularIncrement}
+                >
+                  +
                 </button>
               </div>
             </div>
@@ -109,17 +124,17 @@ export default function Upcoming() {
               <p className="text-2xl">Pay What You Want</p>
               <div className="flex items-center mt-4">
                 <button
-                  className="bg-gray-500 text-white border-none py-2 px-4 rounded-xl  mr-4"
-                  onClick={handleSponsorshipIncrement}
-                >
-                  +
-                </button>
-                <span className="text-xl">${sponsorshipAmount.toFixed(2)}</span>
-                <button
-                  className="bg-gray-500 text-white border-none py-2 px-4 rounded-xl   ml-4"
+                  className="bg-black text-white border-none py-2 px-4 rounded-xl  mr-4"
                   onClick={handleSponsorshipDecrement}
                 >
                   -
+                </button>
+                <span className="text-xl">${sponsorshipAmount.toFixed(2)}</span>
+                <button
+                  className="bg-black text-white border-none py-2 px-4 rounded-xl   ml-4"
+                  onClick={handleSponsorshipIncrement}
+                >
+                  +
                 </button>
               </div>
               <div className="mt-4">
@@ -131,7 +146,7 @@ export default function Upcoming() {
                   className="border-2 border-gray-300 rounded-md py-2 px-4"
                 />
                 <button
-                  className="bg-gray-500 text-white border-none py-2 px-4 rounded-xl ml-4"
+                  className="bg-black hover:underline text-white border-none py-2 px-4 rounded-xl ml-4"
                   onClick={handleSetCustomAmount}
                 >
                   Set Amount
@@ -141,10 +156,17 @@ export default function Upcoming() {
           </div>
         </div>
       </div>
-      <div className="flex justify-end items-left mt-12 mb-12 mr-10">
-        <button className="bg-blue-500 text-white border-none py-2 hover:underline px-8 rounded-xl">
-          Checkout
-        </button>
+      <div className="flex justify-end items-center mt-16 mb-12 mr-10 space-x-4">
+        <div className="text-xl font-semibold">
+          Total Amount: ${totalAmount.toFixed(2)}
+        </div>
+        <Link href='../payment' onClick={handleCheckoutClick}>
+          <button
+            className="bg-black text-white border-none py-2 hover:underline px-8 rounded-xl"
+          >
+            Checkout
+          </button>
+        </Link>
       </div>
       <Footer />
     </main>

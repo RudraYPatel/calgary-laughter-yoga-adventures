@@ -22,7 +22,7 @@ export default function Hero() {
           <h3 className="text-2xl font-semibold mb-2">Laughter Adventures Conference</h3>
           <p className="mb-1">Fri, May 03, 2024</p>
           <p className="mb-4">Pocaterra Inn, Canmore</p>
-          <Link href='../upcoming' className="px-4 py-2 bg-gray-500 text-white rounded">Details</Link>
+          <Link href='../upcoming' className="px-4 py-2 bg-black hover:underline text-white rounded">Details</Link>
         </div>
       </div>
       <hr className="my-8 border-gray-600 mx-10" />
