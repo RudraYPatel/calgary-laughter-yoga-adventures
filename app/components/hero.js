@@ -1,10 +1,11 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
     <main className='min-h-screen bg-white'>
         <div className='text-center'>
-            <p className='text-3xl font-extrabold mb-4'>Welcome to Calgary Laughter Yoga and Adventures</p>
+            <p className='text-3xl font-extrabold mt-5 mb-4'>Welcome to Calgary Laughter Yoga and Adventures</p>
             <p className="text-xl mb-12">Join our inclusive community, embrace playfulness & transform your life through intentional laughter.</p>
             <div className="flex justify-center gap-4">
             <img src="./first.png" alt="Laughing Image 1" className="w-48 h-48 mx-auto" />
@@ -21,7 +22,7 @@ export default function Hero() {
           <h3 className="text-2xl font-semibold mb-2">Laughter Adventures Conference</h3>
           <p className="mb-1">Fri, May 03, 2024</p>
           <p className="mb-4">Pocaterra Inn, Canmore</p>
-          <button className="px-4 py-2 bg-gray-500 text-white rounded">Details</button>
+          <Link href='../upcoming' className="px-4 py-2 bg-gray-500 text-white rounded">Details</Link>
         </div>
       </div>
       <hr className="my-8 border-gray-600 mx-10" />

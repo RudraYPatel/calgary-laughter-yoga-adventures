@@ -3,9 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 import AdminLogin from '../adminlogin/page';
 
+
 export default function Footer() {
   return (
-    <footer className="bg-white py-4 border-t border-gray-300">
+    <footer className="bg-white py-4 border-t border-black">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -22,7 +23,7 @@ export default function Footer() {
               <ul>
                 <li><a href="#" className="hover:underline">FAQs</a></li>
                 <li><a href="#" className="hover:underline">Contact us</a></li>
-                <li><Link href="../adminlogin">Admin Login</Link></li>
+                <li><Link href="../adminlogin" className="hover:underline">Admin Login</Link></li>
               </ul>
             </div>
           </div>
