@@ -1,5 +1,7 @@
+"use client"
 import React from 'react';
 import Link from 'next/link';
+import AdminLogin from '../adminlogin/page';
 
 export default function Footer() {
   return (
@@ -20,7 +22,7 @@ export default function Footer() {
               <ul>
                 <li><a href="#" className="hover:underline">FAQs</a></li>
                 <li><a href="#" className="hover:underline">Contact us</a></li>
-                <li><Link href="/adminlogin">Admin Login</Link></li>
+                <li><Link href="../adminlogin">Admin Login</Link></li>
               </ul>
             </div>
           </div>
