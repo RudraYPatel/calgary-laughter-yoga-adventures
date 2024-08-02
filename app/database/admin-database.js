@@ -14,3 +14,19 @@ export async function addAdmin(adminId, admin) {
   }
 
 // Get Admin from the Database
+export async function getAdmin(adminId) {
+  try {
+    const admin = [];
+    const adminCollectionReference = collection(db, "admin", adminId, "password");
+    const adminSnapshot = await getDocs(adminCollectionReference);
+    
+    adminSnapshot.forEach(doc => {
+      admin.push({ id: doc.id, ...doc.data() });
+    });
+
+    return admin;
+  } catch (error) {
+    console.log('Error getting items:', error);
+    throw error;
+  }
+}

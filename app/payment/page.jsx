@@ -6,7 +6,7 @@ import Footer from '../components/footer';
 
 export default function Payment() {
   const handlePayNowClick = (event) => {
-    event.preventDefault(); // Prevents form submission
+    event.preventDefault(); 
     alert('Redirecting to Square Payment Gateway, Thank You!');
   };
 
