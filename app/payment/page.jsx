@@ -1,13 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 export default function Payment() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    contactNumber: '',
+    countryCode: '+1'
+  });
+
+  const [errors, setErrors] = useState({
+    firstName: false,
+    lastName: false,
+    email: false
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      firstName: formData.firstName.trim() === '',
+      lastName: formData.lastName.trim() === '',
+      email: formData.email.trim() === ''
+    };
+    setErrors(newErrors);
+    return !Object.values(newErrors).some(error => error);
+  };
+
   const handlePayNowClick = (event) => {
-    event.preventDefault(); 
-    alert('Redirecting to Square Payment Gateway, Thank You!');
+    event.preventDefault();
+    if (validateForm()) {
+      alert('Redirecting to Square Payment Gateway, Thank You!');
+    } else {
+      alert('Please fill in all required fields.');
+    }
   };
 
   return (
@@ -22,42 +58,58 @@ export default function Payment() {
               <label className="block text-gray-800">First Name</label>
               <input
                 type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border rounded"
+                className={`w-full px-3 py-2 border rounded ${errors.firstName ? 'border-red-500' : ''}`}
                 placeholder="First Name"
               />
+              {errors.firstName && <p className="text-red-500 text-sm">First Name is required</p>}
             </div>
             <div className="mb-4">
               <label className="block text-gray-800">Last Name</label>
               <input
                 type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border rounded"
+                className={`w-full px-3 py-2 border rounded ${errors.lastName ? 'border-red-500' : ''}`}
                 placeholder="Last Name"
               />
+              {errors.lastName && <p className="text-red-500 text-sm">Last Name is required</p>}
             </div>
             <div className="mb-4">
               <label className="block text-gray-800">Email Address</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border rounded"
+                className={`w-full px-3 py-2 border rounded ${errors.email ? 'border-red-500' : ''}`}
                 placeholder="Email Address"
               />
+              {errors.email && <p className="text-red-500 text-sm">Email is required</p>}
             </div>
             <div className="mb-4">
               <label className="block text-gray-800">Contact Number (optional)</label>
               <div className="flex">
                 <select
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
                   className="border rounded-l px-3 py-2"
-                  defaultValue="+1"
                 >
                   <option value="+1">+1 (Canada)</option>
                   <option value="+1">+1 (US)</option>
-                
                 </select>
                 <input
                   type="text"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 border rounded-r"
                   placeholder="Contact Number"
                 />
