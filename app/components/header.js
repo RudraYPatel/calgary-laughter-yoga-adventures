@@ -12,7 +12,7 @@ export default function Header() {
             <Link className="text-xl mt-9 ml-28 font-semibold hover:underline" href="../upcoming">Upcoming Events</Link>
             <Link className="text-xl mt-9 ml-28 font-semibold hover:underline" href="../training">Training</Link>
             <Link className="text-xl mt-9 ml-28 font-semibold hover:underline" href="">Speakers</Link>
-            <Link className="text-xl mt-9 ml-28 mr-10 font-semibold hover:underline" href="">About</Link>
+            <Link className="text-xl mt-9 ml-28 mr-10 font-semibold hover:underline" href="../about">About</Link>
         </div>  
         
   </div>
