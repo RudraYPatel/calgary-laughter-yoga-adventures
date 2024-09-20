@@ -44,8 +44,41 @@ export default function Hero() {
             <p className='mb-3'>In the spirit of respect, reciprocity and truth, we honour those who have come before us and acknowledge the traditional territories and oral practices of the Blackfoot (Siksika, Piikani, and Kainai), the Tsuut’ina (Sarcee), the Stoney Nakoda First Nations, the Métis Nation (Region 3), and all people who make their homes in the Treaty 7 region of Southern Alberta. </p>
         </div>
         <hr className="mb-10 mt-10 border-black"/>
-
-
+        <div className='text-center leading-relaxed'>
+            <p className='text-3xl font-extrabold mt-10 mb-10'>Calgary Laughter Club Online</p>
+            <p className='text-3xl font-extrabold mt-10 mb-10'>Every Sunday 5:00-5:40 PM Mountain Time</p>
+            <p className='text-2xl font-bold mt-20 mb-10 text-cyan-400'>Join Us On Zoom</p>
+        </div>
+        <div className='text-center mt-20 ml-10 leading-relaxed'>
+            <p className='mb-3'>Every week, a fantastic team of unpaid facilitators hosts these free seminars for the local community.</p>
+            <p className='mb-3'>Come through, introduce yourself, and laugh with us and other visitors from across the globe.</p>
+            <p className='mb-3'>You could quickly discover that you're returning often!</p>
+        </div>
+        <div className='text-center leading-relaxed'>
+            <p className='text-3xl font-extrabold mt-10 mb-10'>Calgary Laughter Club Sunday Brunch Potlucks</p>
+            <p className='text-3xl font-extrabold mt-10 mb-10'>Sundays Quarterly 11:00am-1:00pm</p>
+            <p className='text-2xl font-bold mt-20 mb-10 text-cyan-400'>Join us in-person at the <a href="https://www.insideouttheatre.com/" target="_blank" class="underline">Inside Out Theatre</a> & check <a href="https://www.facebook.com/calgarylaughteryoga" class="underline" target="_blank">Facebook</a> for dates</p>
+        </div>
+        <div className='text-center mt-20 ml-10 leading-relaxed'>
+            <p className='mb-3'>These sessions are offered to our community by a fantastic collection of volunteer Facilitators, much like our online club.</p>
+            <p className='mb-3'>They take turns. Nothing compares to a good laugh—well, except for a good laugh shared with delicious food and wonderful company! </p>
+            <p className='mb-3'>Please bring a dish to share and a recommended $10 donation to help cover the costs of marketing and venue rental.  </p>
+        </div>
+        <div className='text-center ml-10 leading-relaxed'>
+            <p className='text-xl font-extrabold mt-10 '>No cash? No problem! Please use the link to contribute below. 😊 </p>
+        </div>
+        <div className="flex justify-center items-center mt-20">
+            <button className="bg-black text-white px-8 py-2 rounded-full text-lg font-semibold hover:bg-gray-800 transition-colors duration-300">
+                Make A Donation
+            </button>
+        </div>
+        <hr className="mb-10 mt-10  border-black"/>
+        <div className='text-center mt-10 mb-10 ml-10 leading-relaxed'>
+            <p className='mb-3'>In the spirit of respect, reciprocity and truth, we honour those who have come before us and acknowledge the traditional territories and oral practices of </p>
+            <p className='mb-3'>the Blackfoot (Siksika, Piikani, and Kainai), the Tsuut’ina (Sarcee), the Stoney Nakoda First Nations, the Métis Nation (Region 3), and all people who make  </p>
+            <p className='mb-3'>their homes in the Treaty 7 region of Southern Alberta.</p>
+        </div>
+        <Footer/>
     </main>
   )}
 

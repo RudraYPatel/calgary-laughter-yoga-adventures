@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
       <div className='text-center leading-loose'>
         <p className='text-3xl font-extrabold mt-10 mb-4'>Certified Laughter Yoga Leader Training</p>
-        <p className='mt-20 mb-4 mr-9 ml-9 gap-10'> 
+        <p className='mt-20 mb-20 mr-9 ml-9 gap-10'> 
           Enrich your life with laughter! Join us for this unique weekend training program that may change the way you live with joy through laughter! 
           After the completion of the training, you will be qualified as a Certified Laughter Yoga Leader (CLYL) with the Laughter Yoga International University; 
           this is an internationally recognized certification. As CLYL, you can lead Laughter Yoga sessions with corporate clients, seniors and healthcare facilities, 
