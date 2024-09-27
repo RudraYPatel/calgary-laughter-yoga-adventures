@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-4 text-right text-sm text-black">
-          <div>© 2023 by YYC Laughter Yoga And Adventures.</div>
+          © 2023 by YYC Laughter Yoga And Adventures.
         </div>
       </div>
     </footer>
