@@ -6,7 +6,7 @@ import AdminLogin from '../adminlogin/page';
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-4 border-t border-black">
+    <footer className="bg-purple-100 py-4 border-t border-black">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -39,7 +39,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-4 text-right text-sm text-black">
+        <div className="text-right text-sm text-black">
           © 2023 by YYC Laughter Yoga And Adventures.
         </div>
       </div>
